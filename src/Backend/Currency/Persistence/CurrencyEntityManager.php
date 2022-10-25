@@ -42,9 +42,9 @@ class CurrencyEntityManager implements CurrencyEntityManagerInterface
      */
     public function save(CurrencyDataProvider $currencyDto): CurrencyDataProvider
     {
-//        if ($currencyDto->hasId()) {
-//            $currencyEntity = $this->currencyRepository->findOneById($currencyDto->getId());
-//        }
+        if ($currencyDto->hasId()) {
+            $currencyEntity = $this->currencyRepository->findOneById($currencyDto->getId());
+        }
 
         if ($currencyDto->hasCurrencyCode()) {
             $currencyEntity = $this->currencyRepository->findOneByCurrencyCode($currencyDto->getCurrencyCode());
