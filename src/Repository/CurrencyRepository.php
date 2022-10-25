@@ -63,4 +63,24 @@ class CurrencyRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+
+    /**
+     * @param string $id
+     *
+     * @return \App\Entity\Currency|null
+     */
+    public function findOneById(string $id): ?Currency
+    {
+        return $this->findOneBy(['id' => $id]);
+    }
+
+    /**
+     * @param string $currencyCode
+     *
+     * @return \App\Entity\Currency|null
+     */
+    public function findOneByCurrencyCode(string $currencyCode): ?Currency
+    {
+        return $this->findOneBy(['currency_code' => $currencyCode]);
+    }
 }
