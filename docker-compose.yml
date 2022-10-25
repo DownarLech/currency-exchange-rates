@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+
+  database:
+    image: 'mysql:8.0'
+    container_name: mysqlDb
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_USER: userDb
+      MYSQL_PASSWORD: Straszne<34
+      MYSQL_ROOT_PASSWORD: 12Mysql%
+    ports:
+      - 3336:3306
+    healthcheck:
+            test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+            timeout: 20s
+            retries: 10
+  mailcatcher:
+    image: schickling/mailcatcher
+    container_name: cms_mailcatcher_v2
+    ports:
+      - 1080:1080
+      - 1025:1025
