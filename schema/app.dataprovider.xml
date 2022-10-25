@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<DataProviders
+        xmlns="xervice:dataprovider-01"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="xervice:dataprovider-01 ../vendor/xervice/data-provider/dataprovider.schema.xsd"
+>
+
+    <DataProvider name="Currency">
+        <DataElement name="id" type="string" default="''" />
+        <DataElement name="name" type="string" default="''" />
+        <DataElement name="currencyCode" type="string" default="''"/>
+        <DataElement name="exchangeRate" type="float"/>
+    </DataProvider>
+
+</DataProviders>
